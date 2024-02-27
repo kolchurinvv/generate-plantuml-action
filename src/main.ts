@@ -22,7 +22,7 @@ async function generateSvg(code) {
 const diagramPath = core.getInput('path');
 const commitMessage = core.getInput('message');
 
-console.log("input path:", diagramPath);
+// console.log("input path:", diagramPath);
 if (!process.env.GITHUB_TOKEN) {
     core.setFailed('Please set GITHUB_TOKEN env var.');
     process.exit(1);
