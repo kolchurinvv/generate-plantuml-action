@@ -7,7 +7,7 @@ const path = require('path');
 const plantumlEncoder = require('plantuml-encoder');
 
 import { retrieveCodes, getCommitsFromPayload, updatedFiles } from './utils';
-import { GitHub } from '@actions/github/lib/utils';
+// import { GitHub } from '@actions/github/lib/utils';
 
 async function generateSvg(code) {
     const encoded = plantumlEncoder.encode(code);
