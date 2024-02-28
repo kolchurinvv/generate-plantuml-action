@@ -41509,7 +41509,6 @@ async function generateSvg(payload) {
             headers["Authorization"] = `Basic ${basicAuth}`;
         }
     }
-    console.log("server", url);
     try {
         const response = await fetch(url, {
             method: "GET",
