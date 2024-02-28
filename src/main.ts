@@ -61,7 +61,8 @@ if (!process.env.GITHUB_TOKEN) {
   process.exit(1)
 }
 const octokit = github.getOctokit(process.env.GITHUB_TOKEN)
-
+export type Octokit = ReturnType<typeof github.getOctokit>
+export type GhContextPayload = typeof github.context.payload
 ;(async function main() {
   const payload = github.context.payload
   const ref = payload.ref

@@ -1,7 +1,7 @@
 import fs from "fs"
 import { uniq } from "lodash-es"
+import { type Octokit, type GhContextPayload } from "./main"
 import path from "path"
-// const markdownit = require("markdown-it")
 import markdownit from "markdown-it"
 const umlFileExtensions = [".pu", ".pml", ".puml", ".plantuml"]
 const markdownExtensions = [
@@ -76,14 +76,19 @@ function puFromMd(markdown) {
   }, [])
 }
 
-export async function getCommitsFromPayload(octokit, payload) {
+export async function getCommitsFromPayload(
+  octokit: Octokit,
+  payload: GhContextPayload
+) {
   const commits = payload.commits
-  const owner = payload.repository.owner.login
-  const repo = payload.repository.name
+  const owner = payload.repository?.owner.login
+  if (!owner) throw new Error('Unable to get "owner" from payload.')
+  const repo = payload.repository?.name
+  if (!repo) throw new Error('Unable to get "repo" from payload.')
 
   const res = await Promise.all(
     commits.map((commit) =>
-      octokit.repos.getCommit({
+      octokit.rest.repos.getCommit({
         owner,
         repo,
         ref: commit.id,
