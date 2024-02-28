@@ -25,7 +25,6 @@
     "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.1",
     "@actions/github": "^6.0.0",
-    "axios": "^1.6.7",
     "js-base64": "^3.7.7",
     "lodash-es": "^4.17.21",
     "markdown-it": "^14.0.0",

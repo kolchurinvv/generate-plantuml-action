@@ -1,7 +1,6 @@
 // TODO logging.
 import * as core from "@actions/core"
 import * as github from "@actions/github"
-import axios from "axios"
 import { Base64 } from "js-base64"
 import path from "path"
 import * as plantumlEncoder from "plantuml-encoder"

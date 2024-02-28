@@ -1,3 +1,14 @@
+# Updated version
+## new features include:
+- support for custom servers
+  - with basic authentication if enabled via
+  ```javascript
+  headers["Authorization"] = `Basic ${basicAuth}`
+  ```
+- verified that `.pulm` files actually generate svg
+- updated config to work with esm
+- it's now possible to run with node locally with minimal setup, however the octokit will fallback to this repo, so if you'd like to test something locally, fork the repo and change the credentials inside main.ts
+---
 [![Maintainability](https://api.codeclimate.com/v1/badges/a21c7671c0a7ae182c28/maintainability)](https://codeclimate.com/github/grassedge/generate-plantuml-action/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a21c7671c0a7ae182c28/test_coverage)](https://codeclimate.com/github/grassedge/generate-plantuml-action/test_coverage)
 [![Actions Status](https://github.com/grassedge/generate-plantuml-action/workflows/tests/badge.svg)](https://github.com/grassedge/generate-plantuml-action/actions)
