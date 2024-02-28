@@ -49571,7 +49571,6 @@ MarkdownIt.prototype.renderInline = function (src, env) {
 
 
 
-// const markdownit = require("markdown-it")
 
 const umlFileExtensions = [".pu", ".pml", ".puml", ".plantuml"];
 const markdownExtensions = [
@@ -49643,9 +49642,13 @@ function puFromMd(markdown) {
 }
 async function getCommitsFromPayload(octokit, payload) {
     const commits = payload.commits;
-    const owner = payload.repository.owner.login;
-    const repo = payload.repository.name;
-    const res = await Promise.all(commits.map((commit) => octokit.repos.getCommit({
+    const owner = payload.repository?.owner.login;
+    if (!owner)
+        throw new Error('Unable to get "owner" from payload.');
+    const repo = payload.repository?.name;
+    if (!repo)
+        throw new Error('Unable to get "repo" from payload.');
+    const res = await Promise.all(commits.map((commit) => octokit.rest.repos.getCommit({
         owner,
         repo,
         ref: commit.id,
