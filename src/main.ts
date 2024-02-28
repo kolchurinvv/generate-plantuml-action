@@ -26,7 +26,7 @@ type GenerateSvgPayload = {
   password?: string
 }
 
-async function generateSvg(payload) {
+async function generateSvg(payload: GenerateSvgPayload) {
   const encoded = plantumlEncoder.encode(payload.code)
   let url = `http://www.plantuml.com/plantuml/svg/${encoded}`
   let headers = {}
@@ -39,7 +39,7 @@ async function generateSvg(payload) {
       headers["Authorization"] = `Basic ${basicAuth}`
     }
   }
-
+  console.log("server", url)
   try {
     const response = await fetch(url, {
       method: "GET",
