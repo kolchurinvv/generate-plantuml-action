@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/main.js",
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "package": "ncc build lib/main.js",
@@ -11,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:grassedge/plantuml-into-markdown.git"
+    "url": "git@github.com:kolchurinvv/generate-plantuml-action.git"
   },
   "keywords": [
     "actions",
     "node",
     "plantuml"
   ],
-  "author": "grassedge",
+  "author": "grassedge + kolchurinvv",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6",
@@ -26,7 +27,7 @@
     "@actions/github": "^6.0.0",
     "axios": "^1.6.7",
     "js-base64": "^3.7.7",
-    "lodash": "^4.17.19",
+    "lodash-es": "^4.17.21",
     "markdown-it": "^14.0.0",
     "plantuml-encoder": "^1.4.0"
   },
@@ -38,6 +39,7 @@
     "jest-circus": "^29.7.0",
     "jest-junit": "^16.0.0",
     "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "jest-junit": {

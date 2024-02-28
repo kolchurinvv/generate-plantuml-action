@@ -1,6 +1,6 @@
 name: 'Generate Plantuml'
 description: 'Generate uml diagrams with Plantuml Server and push them to your repository.'
-author: 'grassedge'
+author: 'grassedge + kolchurinvv'
 inputs:
   path:
     description: 'path to directory which generated svg is stored'
@@ -8,6 +8,15 @@ inputs:
   message:
     description: 'the commit message when committing generated images'
     default: 'Render PlantUML files'
+  server:
+    description: 'the plantuml server url'
+    default: 'http://www.plantuml.com/plantuml/svg/${code}'
+  username:
+    description: 'the username for basic authentication'
+    default: ''
+  password:
+    description: 'the password for basic authentication'
+    default: ''
 runs:
   using: 'node20'
   main: 'dist/index.js'

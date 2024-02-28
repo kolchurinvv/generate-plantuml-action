@@ -104,5 +104,6 @@ typings/
 
 # IDE files
 .idea
+.vscode
 
 /lib
