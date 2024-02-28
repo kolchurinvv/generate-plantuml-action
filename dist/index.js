@@ -49689,7 +49689,7 @@ async function generateSvg(payload) {
                     },
                 };
             }
-            res = await lib_axios.get(`${server}/svg${encoded}`, headers);
+            res = await lib_axios.post(`${server}/svg/${encoded}`, headers);
         }
         else {
             res = await lib_axios.get(`http://www.plantuml.com/plantuml/svg/${encoded}`);

@@ -40,7 +40,7 @@ async function generateSvg(payload: GenerateSvgPayload) {
           },
         }
       }
-      res = await axios.get(`${server}/svg/${encoded}`, headers)
+      res = await axios.post(`${server}/svg/${encoded}`, headers)
     } else {
       res = await axios.get(`http://www.plantuml.com/plantuml/svg/${encoded}`)
       return res.data
