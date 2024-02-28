@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="1.529">
+  <testsuite name="__tests__/main.test.ts" errors="0" failures="0" skipped="0" timestamp="2024-02-28T14:10:31" time="1.486" tests="3">
+    <testcase classname="" name="retrieveCodes" time="0.007">
+    </testcase>
+    <testcase classname="" name="getCommitsFromPayload" time="0.001">
+    </testcase>
+    <testcase classname="" name="updatedFiles" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
