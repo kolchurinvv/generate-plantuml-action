@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "package": "ncc build lib/main.js",
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "test:ci": "node --experimental-vm-modules node_modules/jest/bin/jest.js --ci --coverage --reporters=default --reporters=jest-junit"
   },
   "repository": {
