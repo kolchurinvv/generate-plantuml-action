@@ -49693,8 +49693,8 @@ async function generateSvg(payload) {
         }
         else {
             res = await lib_axios.get(`http://www.plantuml.com/plantuml/svg/${encoded}`);
-            return res.data;
         }
+        return res.data;
     }
     catch (e) {
         if (e instanceof Error || e instanceof NetworkError) {

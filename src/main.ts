@@ -43,8 +43,8 @@ async function generateSvg(payload: GenerateSvgPayload) {
       res = await axios.post(`${server}/svg/${encoded}`, headers)
     } else {
       res = await axios.get(`http://www.plantuml.com/plantuml/svg/${encoded}`)
-      return res.data
     }
+    return res.data
   } catch (e) {
     if (e instanceof Error || e instanceof NetworkError) {
       core.setFailed(e)
