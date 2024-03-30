@@ -47,24 +47,29 @@ This Action subscribes to Push events.
 
 ```workflow
 name: generate plantuml
-on: push
+on:
+  push:
+    branches:
+      - main
 jobs:
   generate_plantuml:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     name: plantuml
     steps:
-    - name: checkout
-      uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
-    - name: plantuml
-      id: plantuml
-      uses: grassedge/generate-plantuml-action@v1.5
-      with:
-        path: example
-        message: "Render PlantUML files"
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: checkout
+        uses: actions/checkout@v4.1.1
+      - name: plantuml
+        id: plantuml
+        uses: kolchurinvv/generate-plantuml-action@master
+        with:
+          server: "https://diagrams.kolchurin.dev"
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+        #   path: "."
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
 ```
 
 *input*
