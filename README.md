@@ -64,7 +64,7 @@ jobs:
         id: plantuml
         uses: kolchurinvv/generate-plantuml-action@master
         with:
-          server: "https://diagrams.kolchurin.dev"
+          server: "https://your.plantuml.server"
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
         #   path: "."
